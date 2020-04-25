@@ -340,6 +340,16 @@ extension MaterialShowcase {
       hiddenTargetHolderView.addGestureRecognizer(tapGestureRecoganizer())
       hiddenTargetHolderView.isUserInteractionEnabled = true
     }
+
+    let button = UIButton(frame: self.frame)
+    button.setTitle("", for: .normal)
+    button.tag = 123
+    button.addTarget(self, action: #selector(helpButtonTapped), for: .touchUpInside)
+    self.addSubview(button)
+  }
+
+  @objc func helpButtonTapped() {
+    completeShowcase(didTapTarget: true)
   }
   
   /// Add background which is a big circle
